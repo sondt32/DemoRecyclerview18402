@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,6 +43,16 @@ public class CatAdapter extends  RecyclerView.Adapter <CatAdapter.ViewHolder>{
         holder.tv_name.setText( objCat.getName()  );
 
         // sau này muốn tương tac với view nào thì viết ở đây
+        // bấm vào tên thì toast thông thông báo
+        holder.tv_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,
+                        "Tên thể loại: " + objCat.getName(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
